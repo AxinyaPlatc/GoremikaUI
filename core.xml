@@ -1,0 +1,62 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..\FrameXML\UI.xsd">
+    <Frame name="GoremikaUIFrame" parent="UIParent" movable="true" enableMouse="true" hidden="false">
+        
+        <Size x="220" y="90"/>
+        <Anchors>
+            <Anchor point="CENTER"/>
+        </Anchors>
+        <Backdrop bgFile="Interface\DialogFrame\UI-DialogBox-Background" edgeFile="Interface\DialogFrame\UI-DialogBox-Border" tile="true">
+            <EdgeSize val="16"/>
+            <TileSize val="32"/>
+            <BackgroundInsets>
+                <AbsInset left="5" right="5" top="5" bottom="5"/>
+            </BackgroundInsets>
+        </Backdrop>
+
+        <Layers>
+            <Layer level="ARTWORK">
+                <FontString name="$parent_HP" inherits="GameFontNormalLarge" text="HP: ...">
+                    <Anchors>
+                        <Anchor point="TOPLEFT" x="15" y="-15"/>
+                    </Anchors>
+                </FontString>
+
+                <FontString name="$parent_MP" inherits="GameFontNormalLarge" text="MP: ...">
+                    <Anchors>
+                        <Anchor point="TOPLEFT" relativeTo="$parent_HP" relativePoint="BOTTOMLEFT" x="0" y="-5"/>
+                    </Anchors>
+                </FontString>
+
+                <FontString name="$parent_Money" inherits="GameFontNormal" text="Money: ...">
+                    <Anchors>
+                        <Anchor point="TOPLEFT" relativeTo="$parent_MP" relativePoint="BOTTOMLEFT" x="0" y="-10"/>
+                    </Anchors>
+                </FontString>
+
+                <FontString name="$parent_Rate" inherits="GameFontNormalSmall" text="Rate: ...">
+                    <Anchors>
+                        <Anchor point="BOTTOMLEFT" x="15" y="15"/>
+                    </Anchors>
+                </FontString>
+            </Layer>
+        </Layers>
+        
+        <Scripts>
+            <OnLoad>
+                GoremikaUI_OnLoad(self);
+            </OnLoad>
+            <OnEvent>
+                GoremikaUI_OnEvent(self, event, ...);
+            </OnEvent>
+            <OnUpdate>
+                GoremikaUI_OnUpdate(self, elapsed);
+            </OnUpdate>
+            <OnDragStart>
+                self:StartMoving();
+            </OnDragStart>
+            <OnDragStop>
+                self:StopMovingOrSizing();
+            </OnDragStop>
+        </Scripts>
+    </Frame>
+</Ui>
