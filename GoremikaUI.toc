@@ -2,7 +2,7 @@
 ## Title: |cffFFD700GoremikaUI|r
 ## Notes: A clear addon for counting stats and money.
 ## Author: Axinya
-## Version: 1.17.2
+## Version: 1
 
 core.xml
 core.lua
