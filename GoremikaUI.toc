@@ -1,4 +1,4 @@
-## Interface: 11403
+## Interface: 11200
 ## Title: |cffFFD700GoremikaUI|r
 ## Notes: A clear addon for counting stats and money.
 ## Author: Axinya
